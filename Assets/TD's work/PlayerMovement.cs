@@ -6,20 +6,28 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     private string UserName = "Tim";
-    [SerializeField] int score;
+    [SerializeField] int score; //holds the current player score
     [SerializeField] TextMeshProUGUI ScoreText;
-    public float move_speed = 10f;
+    public float move_speed = 5f;
     public Rigidbody2D body;
-    Vector2 movement; //can store an x and y
+    private Vector2 movement; //can store an x and y
     public TMP_InputField input_field;
+    private Animator animator;
+    private bool Paralyzed = false; //player can't move if this is true
+
+    private void Awake()
+    {
+        Debug.Log("I live");
+        body = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
+    }
 
     public void foundGold()
     {
         score = score + 5;
-        ScoreText.text = score.ToString();
+        ScoreText.text = "Score: " + score.ToString();
         updateHighScore();
-
-        
 
     }
 
@@ -45,21 +53,20 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log(UserName);
         UserName = input_field.text;
+        Paralyzed = false;
         Debug.Log(UserName);
-        //transform.Find("InputField (TMP)").gameObject.setActive(false);
-        //transform.GetChild("InputField (TMP)").gameObject.SetActive(false);
-        //gameObject.GetChild("childname").SetActive(false);
-        //Debug.Log(gameObject.GetChild(0));
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if(Paralyzed == false)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+        }
         //int high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
-        //Debug.Log(high);
     }
 
     //called on a fixed interval

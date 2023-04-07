@@ -174,6 +174,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1589277646664685683, guid: 88c6fc1aba315384484df95f7c0471b9, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589277646664685683, guid: 88c6fc1aba315384484df95f7c0471b9, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703898442235109546, guid: 88c6fc1aba315384484df95f7c0471b9, type: 3}
+      propertyPath: m_text
+      value: 'Score: 0
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703898442451365746, guid: 88c6fc1aba315384484df95f7c0471b9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738753267772604076, guid: 88c6fc1aba315384484df95f7c0471b9, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7969836330671665358, guid: 88c6fc1aba315384484df95f7c0471b9, type: 3}
       propertyPath: m_Name
       value: Player mk3
@@ -301,7 +323,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -80550209054204492, guid: 0b4818c08dc1e274da4c05c4564bb812, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1325550098550538823, guid: 0b4818c08dc1e274da4c05c4564bb812, type: 3}
       propertyPath: m_Name
@@ -372,7 +394,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
