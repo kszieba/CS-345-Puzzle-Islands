@@ -21,9 +21,6 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("I live");
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        //load high score
-        int high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
-        HighScoreText.text = "High Score: " + high.ToString();
 
     }
 
@@ -61,7 +58,20 @@ public class PlayerMovement : MonoBehaviour
         UserName = input_field.text;
         Paralyzed = false;
         Debug.Log(UserName);
+        //load high score
+        int high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
+        HighScoreText.text = "High Score: " + high.ToString();
 
+    }
+
+    private void UpDateFacing()
+    {
+        if(movement.x != 0 || movement.y != 0)
+        {
+            animator.SetFloat("x", movement.x);
+            animator.SetFloat("y", movement.y);
+        }
+        
     }
 
     // Update is called once per frame
@@ -71,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
+            UpDateFacing(); //this is probably calling this method way to often since its only needed when moveing
         }
         //int high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
     }
