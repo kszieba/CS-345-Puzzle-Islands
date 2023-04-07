@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private string UserName = "Tim";
     [SerializeField] int score; //holds the current player score
     [SerializeField] TextMeshProUGUI ScoreText;
+    [SerializeField] TextMeshProUGUI HighScoreText;
     public float move_speed = 5f;
     public Rigidbody2D body;
     private Vector2 movement; //can store an x and y
@@ -20,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("I live");
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        //load high score
+        int high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
+        HighScoreText.text = "High Score: " + high.ToString();
 
     }
 
@@ -37,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
         if(score > PlayerPrefs.GetInt(UserName + "HighScore", 0))
         {
             PlayerPrefs.SetInt(UserName + "HighScore", score);
+            int high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
+            HighScoreText.text = "High Score: " + high.ToString();
         }
     }
 
