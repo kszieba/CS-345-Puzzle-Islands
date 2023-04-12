@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement; //can store an x and y
     public TMP_InputField input_field;
     private Animator animator;
-    private bool Paralyzed = false; //player can't move if this is true
+    private bool Paralyzed = true; //player can't move if this is true
 
     private void Awake()
     {
@@ -43,12 +43,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("hit");
         if (other.gameObject.tag == "TestGold")
         {
+            //goldGained = other.GetComponent<int>(); //FYI this dose not work and is just pseudo code for now
             foundGold();
+            Destroy(other.gameObject); //get rid to gold so it can't be picked up twice
         }
     }
 
@@ -83,7 +85,6 @@ public class PlayerMovement : MonoBehaviour
             movement.y = Input.GetAxisRaw("Vertical");
             UpDateFacing(); //this is probably calling this method way to often since its only needed when moveing
         }
-        //int high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
     }
 
     //called on a fixed interval
