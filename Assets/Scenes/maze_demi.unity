@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1411914}
   - component: {fileID: 1411913}
   m_Layer: 0
-  m_Name: Tilemap
+  m_Name: player movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
