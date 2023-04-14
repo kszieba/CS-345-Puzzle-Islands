@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class goldVal : MonoBehaviour
 {
-    //[SerializeField] int goldToGain = 5;
+    //[SerializeField] int scoreValue = 5;
 
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("hit ? A");
         if (other.gameObject.tag == "Player")
         {
             //gameObject.active = false;
-            Debug.Log("hit Player");
+            Debug.Log("hit Player A");
         }
     }
-
 
 }
