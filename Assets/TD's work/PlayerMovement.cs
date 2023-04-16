@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("I live");
+        //Debug.Log("I live");
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 		score = PlayerPrefs.GetInt(UserName + "Score", 0);
@@ -28,9 +28,9 @@ public class PlayerMovement : MonoBehaviour
 		
     }
 
-    public void foundGold()
+    public void foundGold(int value)
     {
-        score = score + 5;
+        score = score + value;//add the value of the gold found to score
         ScoreText.text = "Score: " + score.ToString();
         updateHighScore();
 
@@ -58,8 +58,12 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("hit");
         if (other.gameObject.tag == "TestGold")
         {
-            //goldGained = other.GetComponent<int>(); //FYI this dose not work and is just pseudo code for now
-            foundGold();
+            foundGold(100);
+            Destroy(other.gameObject); //get rid to gold so it can't be picked up twice
+        }
+        else if (other.gameObject.tag == "GFiveVal")
+        {
+            foundGold(5);
             Destroy(other.gameObject); //get rid to gold so it can't be picked up twice
         }
 		else if (other.gameObject.tag == "Destination")
