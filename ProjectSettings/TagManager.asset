@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - TestGold
+  - GFiveVal
   layers:
   - Default
   - TransparentFX
