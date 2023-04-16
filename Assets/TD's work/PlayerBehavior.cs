@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerBehavior: MonoBehaviour
 {
     private string UserName = "Tim";
     [SerializeField] int score; //holds the current player score
