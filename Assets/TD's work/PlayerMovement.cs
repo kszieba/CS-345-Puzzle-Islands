@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,13 +16,16 @@ public class PlayerMovement : MonoBehaviour
     public TMP_InputField input_field;
     private Animator animator;
     private bool Paralyzed = true; //player can't move if this is true
+	public GameObject data_object;
 
     private void Awake()
     {
         Debug.Log("I live");
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
+		score = PlayerPrefs.GetInt(UserName + "Score", 0);
+		ScoreText.text = "Score: " + score.ToString();
+		
     }
 
     public void foundGold()
@@ -31,6 +35,12 @@ public class PlayerMovement : MonoBehaviour
         updateHighScore();
 
     }
+	
+	public void reachedDestination()
+	{
+		PlayerPrefs.SetInt(UserName + "Score", score);
+		SceneManager.LoadScene("maze_demi");
+	}
 
     private void updateHighScore()
     {
@@ -52,6 +62,10 @@ public class PlayerMovement : MonoBehaviour
             foundGold();
             Destroy(other.gameObject); //get rid to gold so it can't be picked up twice
         }
+		else if (other.gameObject.tag == "Destination")
+		{
+			reachedDestination();
+		}
     }
 
     public void ReadStringInput()
