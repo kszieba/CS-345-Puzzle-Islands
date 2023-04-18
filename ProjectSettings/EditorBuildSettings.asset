@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/maze_demi.unity
     guid: c85d340edccf0467fb2fd1742b93df87
+  - enabled: 1
+    path: Assets/Scenes/maze_demi2.unity
+    guid: 3bbc5b5bbb4904218a35448b9e519219
+  - enabled: 1
+    path: Assets/Scenes/k-maze.unity
+    guid: 2f17c07eded0346f088eb1f7c0461a95
   m_configObjects: {}
