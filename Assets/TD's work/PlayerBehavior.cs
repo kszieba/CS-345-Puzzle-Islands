@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehavior: MonoBehaviour
 {
-    private string UserName = "Tim";
+    private string UserName = "Tim"; //This is the user name used to call variables like score from player PlayerPrefs
     [SerializeField] int score; //holds the current player score
     [SerializeField] TextMeshProUGUI ScoreText;
     [SerializeField] TextMeshProUGUI HighScoreText;
