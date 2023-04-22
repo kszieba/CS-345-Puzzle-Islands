@@ -29,6 +29,11 @@ public class PlayerBehavior: MonoBehaviour
         animator = GetComponent<Animator>();
 		level = PlayerPrefs.GetInt("Level", 0);
 		score = PlayerPrefs.GetInt(UserName + "Score", 0);
+		if (SceneManager.GetActiveScene().name == "t-maze")
+		{
+			level = 0;
+			score = 0;
+		}
 		ScoreText.text = "Score: " + score.ToString();
 		
     }
