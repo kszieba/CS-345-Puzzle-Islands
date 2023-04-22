@@ -17,12 +17,17 @@ public class PlayerBehavior: MonoBehaviour
     private Animator animator;
     private bool Paralyzed = true; //player can't move if this is true
 	public GameObject data_object;
+	
+	public int level;
+	private string[] destinationArray = {"t-maze", "t-maze 2", "maze_demi", "maze_demi2", 
+	"k-maze"};
 
     private void Awake()
     {
         //Debug.Log("I live");
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+		level = PlayerPrefs.GetInt("Level", 0);
 		score = PlayerPrefs.GetInt(UserName + "Score", 0);
 		ScoreText.text = "Score: " + score.ToString();
 		
@@ -39,7 +44,9 @@ public class PlayerBehavior: MonoBehaviour
 	public void reachedDestination()
 	{
 		PlayerPrefs.SetInt(UserName + "Score", score);
-		SceneManager.LoadScene("maze_demi");
+		level = level + 1;
+		PlayerPrefs.SetInt("Level", level);
+		SceneManager.LoadScene(destinationArray[level]);
 	}
 
     private void updateHighScore()
