@@ -22,7 +22,7 @@ public class PlayerBehavior: MonoBehaviour
     private int high;
 
     private string[] destinationArray = {"t-maze", "t-maze 2", "maze_demi", "maze_demi2", 
-	"k-maze"};
+	"k-maze", "k-maze2", "t-maze"};
 
     private void Awake()
     {
@@ -59,6 +59,7 @@ public class PlayerBehavior: MonoBehaviour
 		PlayerPrefs.SetInt(UserName + "Score", score);
 		level = level + 1;
 		PlayerPrefs.SetInt("Level", level);
+		Debug.Log(level);
 		SceneManager.LoadScene(destinationArray[level]);
 	}
 
