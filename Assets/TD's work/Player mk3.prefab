@@ -731,7 +731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1703898443790531613
 RectTransform:
   m_ObjectHideFlags: 0
@@ -992,9 +992,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   ScoreText: {fileID: 1703898442235109546}
+  HighScoreText: {fileID: 0}
   move_speed: 10
   body: {fileID: 1738753267772604076}
   input_field: {fileID: 1703898442451365744}
+  data_object: {fileID: 0}
+  level: 0
 --- !u!70 &-4769129994359959060
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

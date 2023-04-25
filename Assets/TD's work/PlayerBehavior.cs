@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehavior: MonoBehaviour
 {
-    private string UserName = "Tim"; //This is the user name used to call variables like score from player PlayerPrefs
+    private string UserName; //This is the user name used to call variables like score from player PlayerPrefs
     [SerializeField] int score; //holds the current player score
     [SerializeField] TextMeshProUGUI ScoreText;
     [SerializeField] TextMeshProUGUI HighScoreText;
@@ -15,27 +15,35 @@ public class PlayerBehavior: MonoBehaviour
     private Vector2 movement; //can store an x and y
     public TMP_InputField input_field;
     private Animator animator;
-    private bool Paralyzed = true; //player can't move if this is true
+    //private bool Paralyzed = true; //player can't move if this is true
 	public GameObject data_object;
 	
 	public int level;
-	private string[] destinationArray = {"t-maze", "t-maze 2", "maze_demi", "maze_demi2", 
+    private int high;
+
+    private string[] destinationArray = {"t-maze", "t-maze 2", "maze_demi", "maze_demi2", 
 	"k-maze"};
 
     private void Awake()
     {
-        //Debug.Log("I live");
+        
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-		level = PlayerPrefs.GetInt("Level", 0);
+
+        UserName = PlayerPrefs.GetString("UserName", null);
+        level = PlayerPrefs.GetInt("Level", 0);
 		score = PlayerPrefs.GetInt(UserName + "Score", 0);
-		if (SceneManager.GetActiveScene().name == "t-maze")
+        high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
+        if (SceneManager.GetActiveScene().name == "t-maze")
 		{
-			level = 0;
-			score = 0;
+            Debug.Log("bro im in t-maze");
 		}
+        //Update UI text
 		ScoreText.text = "Score: " + score.ToString();
-		
+        HighScoreText.text = "High Score: " + high.ToString();
+
+        Debug.Log("I live: " + UserName + level + score);
+
     }
 
     public void foundGold(int value)
@@ -86,14 +94,27 @@ public class PlayerBehavior: MonoBehaviour
 
     public void ReadStringInput()
     {
-        Debug.Log(UserName);
+        //Debug.Log(UserName);
         UserName = input_field.text;
-        Paralyzed = false;
+        PlayerPrefs.SetString("UserName", UserName);
+        //Paralyzed = false;
         Debug.Log(UserName);
-        //load high score
-        int high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
+        //load high score, dose doing this on awaken make doing it here pointless?
+        high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
         HighScoreText.text = "High Score: " + high.ToString();
 
+    }
+
+    public void NewGame() //reset everything
+    {
+        Debug.Log("New Game!");
+        UserName = null;
+        level = 0;
+        score = 0;
+        high = 0;
+        //is this a dum work around, is there a better way for the game not to show the score from last game upon loading the first level
+        ScoreText.text = "Score: " + score.ToString();
+        HighScoreText.text = "High Score: " + high.ToString();
     }
 
     private void UpDateFacing()
@@ -109,7 +130,7 @@ public class PlayerBehavior: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Paralyzed == false)
+        if(UserName != null) //the player can not move until they have entered a username
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
