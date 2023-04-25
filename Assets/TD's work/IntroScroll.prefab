@@ -55,7 +55,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.41
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_text: 'You were making good progress on your journey but good things can''t last.
     A rogue wave has washed several crates of cargo off your ship and into the sea.
     Fortunately they should be buoyant enough to be found floating within the network
-    of rivers interweaving the nearby island chain.
+    of rivers weaving through the nearby island chain.
 
 '
   m_isRightToLeft: 0
@@ -503,7 +503,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use W A S D to stear your ship
+  m_text: Use W A S D to steer your ship
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -685,7 +685,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -150}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 355, y: 164.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7212165817070010507
@@ -716,8 +716,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Collect gold        to raise your score and creates of cargo          
-    to advance to the next level
+  m_text: Collect gold        to raise your score and crates of cargo           to
+    advance to the next level
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
