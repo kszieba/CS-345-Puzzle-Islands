@@ -4245,8 +4245,8 @@ Tilemap:
   - first: {x: 6, y: 7, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 21
-      m_TileSpriteIndex: 21
+      m_TileIndex: 12
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4958,7 +4958,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: eaec809eee50a9a4188e89ceb223fde5, type: 2}
   - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: eea0f8bba09e2fb4994218bb68209b4f, type: 2}
-  - m_RefCount: 19
+  - m_RefCount: 20
     m_Data: {fileID: 11400000, guid: 5c1c14b37e2628e4bb028ee2ee610a68, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 2c2a9771618766d47950513a5a69ceca, type: 2}
@@ -4976,7 +4976,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 08845cc03838db24c9c40ac7c16977a4, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: fea6a41c1ec837542bbddbe1849c830a, type: 2}
-  - m_RefCount: 12
+  - m_RefCount: 11
     m_Data: {fileID: 11400000, guid: 2e0d62cb32e4966489fc6d078ef05aa1, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: b0caae10dcbfaea469fe6f370663f3fe, type: 2}
@@ -5007,7 +5007,7 @@ Tilemap:
     m_Data: {fileID: -864074034, guid: 370b05a2819e293488f86365116b3f28, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 499381084, guid: 370b05a2819e293488f86365116b3f28, type: 3}
-  - m_RefCount: 19
+  - m_RefCount: 20
     m_Data: {fileID: -88475961, guid: 370b05a2819e293488f86365116b3f28, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 1639625354, guid: 370b05a2819e293488f86365116b3f28, type: 3}
@@ -5025,7 +5025,7 @@ Tilemap:
     m_Data: {fileID: 1909905341, guid: 370b05a2819e293488f86365116b3f28, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -2082110444, guid: 370b05a2819e293488f86365116b3f28, type: 3}
-  - m_RefCount: 12
+  - m_RefCount: 11
     m_Data: {fileID: 1350176156, guid: 370b05a2819e293488f86365116b3f28, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -754198552, guid: 370b05a2819e293488f86365116b3f28, type: 3}

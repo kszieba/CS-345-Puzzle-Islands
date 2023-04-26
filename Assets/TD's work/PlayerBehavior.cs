@@ -99,7 +99,7 @@ public class PlayerBehavior: MonoBehaviour
         UserName = input_field.text;
         PlayerPrefs.SetString("UserName", UserName);
         //Paralyzed = false;
-        Debug.Log(UserName);
+        //Debug.Log(UserName);
         //load high score, dose doing this on awaken make doing it here pointless?
         high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
         HighScoreText.text = "High Score: " + high.ToString();
