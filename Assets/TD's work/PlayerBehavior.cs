@@ -10,10 +10,13 @@ public class PlayerBehavior: MonoBehaviour
     [SerializeField] int score; //holds the current player score
     [SerializeField] TextMeshProUGUI ScoreText;
     [SerializeField] TextMeshProUGUI HighScoreText;
+
     public float move_speed = 5f;
     public Rigidbody2D body;
     private Vector2 movement; //can store an x and y
+
     public TMP_InputField input_field;
+
     private Animator animator;
     //private bool Paralyzed = true; //player can't move if this is true
 	public GameObject data_object;
@@ -23,6 +26,8 @@ public class PlayerBehavior: MonoBehaviour
 
     private string[] destinationArray = {"t-maze", "t-maze 2", "maze_demi", "maze_demi2", 
 	"k-maze", "k-maze2", "t-maze"};
+
+    [SerializeField] private AudioSource goldCollectionSound;
 
     private void Awake()
     {
@@ -48,6 +53,7 @@ public class PlayerBehavior: MonoBehaviour
 
     public void foundGold(int value)
     {
+        goldCollectionSound.Play();
         score = score + value;//add the value of the gold found to score
         ScoreText.text = "Score: " + score.ToString();
         updateHighScore();
