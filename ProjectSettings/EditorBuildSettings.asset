@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/t-maze 2.unity
     guid: 64c774c62a4cbba4abaffb4af87c69c9
+  - enabled: 1
+    path: Assets/Scenes/k-maze2.unity
+    guid: d1d8d845b3a104f9285b88a54efe2864
   m_configObjects: {}
