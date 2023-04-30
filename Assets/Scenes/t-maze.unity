@@ -8552,7 +8552,7 @@ GameObject:
   - component: {fileID: 1227733480}
   - component: {fileID: 1227733479}
   m_Layer: 0
-  m_Name: Sub-Land
+  m_Name: Sub-land
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
