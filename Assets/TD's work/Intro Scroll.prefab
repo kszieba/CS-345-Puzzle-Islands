@@ -977,7 +977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7212165817408314981}
   m_Layer: 0
-  m_Name: IntroScroll
+  m_Name: Intro Scroll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

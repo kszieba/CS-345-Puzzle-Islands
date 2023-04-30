@@ -1368,7 +1368,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 10
-      m_TileSpriteIndex: 15
+      m_TileSpriteIndex: 24
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1588,7 +1588,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 9
+      m_TileSpriteIndex: 21
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3168,7 +3168,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 23
-      m_TileSpriteIndex: 18
+      m_TileSpriteIndex: 20
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3958,7 +3958,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 11
-      m_TileSpriteIndex: 10
+      m_TileSpriteIndex: 18
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5057,10 +5057,10 @@ Tilemap:
     m_Data: {fileID: -706487296, guid: 370b05a2819e293488f86365116b3f28, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 3999092, guid: 370b05a2819e293488f86365116b3f28, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1799285170, guid: 370b05a2819e293488f86365116b3f28, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 3
     m_Data: {fileID: 1639625354, guid: 370b05a2819e293488f86365116b3f28, type: 3}
   - m_RefCount: 3
@@ -5069,26 +5069,26 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -2082110444, guid: 370b05a2819e293488f86365116b3f28, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1909905341, guid: 370b05a2819e293488f86365116b3f28, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: 578012357, guid: 370b05a2819e293488f86365116b3f28, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 499381084, guid: 370b05a2819e293488f86365116b3f28, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -626400331, guid: 370b05a2819e293488f86365116b3f28, type: 3}
+    m_Data: {fileID: 1799285170, guid: 370b05a2819e293488f86365116b3f28, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -864074034, guid: 370b05a2819e293488f86365116b3f28, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -626400331, guid: 370b05a2819e293488f86365116b3f28, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 3999092, guid: 370b05a2819e293488f86365116b3f28, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -1443017962, guid: 370b05a2819e293488f86365116b3f28, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -743528316, guid: 370b05a2819e293488f86365116b3f28, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1909905341, guid: 370b05a2819e293488f86365116b3f28, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 326495101, guid: 370b05a2819e293488f86365116b3f28, type: 3}
   m_TileMatrixArray:
@@ -5652,7 +5652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249376441}
   m_Layer: 0
-  m_Name: GoldHolder
+  m_Name: Gold Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
