@@ -5652,7 +5652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249376441}
   m_Layer: 0
-  m_Name: GoldHolder
+  m_Name: Gold Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5864,7 +5864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4964508493723181872, guid: 030b3cd1407dd6e4496bf570af7fad7e, type: 3}
       propertyPath: m_Name
-      value: Player mk4
+      value: Mid-game Player
       objectReference: {fileID: 0}
     - target: {fileID: 4964508493723181872, guid: 030b3cd1407dd6e4496bf570af7fad7e, type: 3}
       propertyPath: m_IsActive
@@ -9167,8 +9167,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
@@ -9187,8 +9187,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10

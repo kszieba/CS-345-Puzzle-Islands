@@ -5774,6 +5774,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7212165817166225285, guid: 827d233423665b640a2f06afac0c2a30, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212165817166225285, guid: 827d233423665b640a2f06afac0c2a30, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7212165817408314981, guid: 827d233423665b640a2f06afac0c2a30, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5820,7 +5828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7212165817408314983, guid: 827d233423665b640a2f06afac0c2a30, type: 3}
       propertyPath: m_Name
-      value: IntroScroll
+      value: Intro Scroll
       objectReference: {fileID: 0}
     - target: {fileID: 7212165817408314983, guid: 827d233423665b640a2f06afac0c2a30, type: 3}
       propertyPath: m_IsActive
@@ -8966,7 +8974,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1493336451}
   m_Layer: 0
-  m_Name: GoldHolder
+  m_Name: Gold Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
