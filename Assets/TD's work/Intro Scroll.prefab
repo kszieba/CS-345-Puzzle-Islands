@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 7212165815901611931}
   - component: {fileID: 7212165815901611930}
   m_Layer: 5
-  m_Name: Ship preview
+  m_Name: Ship Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 7212165816504752426}
   - component: {fileID: 7212165816504752421}
   m_Layer: 5
-  m_Name: Moveing Totorial Text
+  m_Name: Moving Tutorial Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: 7212165816743332522}
   - component: {fileID: 7212165816743332517}
   m_Layer: 5
-  m_Name: Cargo preview
+  m_Name: Cargo Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -736,7 +736,7 @@ GameObject:
   - component: {fileID: 7212165817070010507}
   - component: {fileID: 7212165817070010506}
   m_Layer: 5
-  m_Name: Collectables Totorial Text
+  m_Name: Collectibles Tutorial Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1145,7 +1145,7 @@ GameObject:
   - component: {fileID: 7212165817646312133}
   - component: {fileID: 7212165817646312132}
   m_Layer: 5
-  m_Name: Coin preview
+  m_Name: Coin Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
