@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440354413472304367, guid: 363052db73cf73c4db284235e8c7408b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal T-maze size
+      value: Gold Five Val T-maze Size
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 363052db73cf73c4db284235e8c7408b, type: 3}

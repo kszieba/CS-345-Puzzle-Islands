@@ -5872,7 +5872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440354413472304367, guid: 363052db73cf73c4db284235e8c7408b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal (1)
+      value: Gold Five Val (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 363052db73cf73c4db284235e8c7408b, type: 3}
@@ -5934,7 +5934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440354413472304367, guid: 363052db73cf73c4db284235e8c7408b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal (6)
+      value: Gold Five Val (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 363052db73cf73c4db284235e8c7408b, type: 3}
@@ -5996,7 +5996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440354413472304367, guid: 363052db73cf73c4db284235e8c7408b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal (5)
+      value: Gold Five Val (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 363052db73cf73c4db284235e8c7408b, type: 3}
@@ -6058,7 +6058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440354413472304367, guid: 363052db73cf73c4db284235e8c7408b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal (3)
+      value: Gold Five Val (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 363052db73cf73c4db284235e8c7408b, type: 3}
@@ -6120,7 +6120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440354413472304367, guid: 363052db73cf73c4db284235e8c7408b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal
+      value: Gold Five Val
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 363052db73cf73c4db284235e8c7408b, type: 3}
@@ -6230,7 +6230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440354413472304367, guid: 363052db73cf73c4db284235e8c7408b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal (4)
+      value: Gold Five Val (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 363052db73cf73c4db284235e8c7408b, type: 3}

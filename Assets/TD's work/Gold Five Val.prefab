@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7442028322028335374}
   - component: {fileID: 359668978538488791}
   m_Layer: 0
-  m_Name: GoldFiveVal
+  m_Name: Gold Five Val
   m_TagString: GFiveVal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

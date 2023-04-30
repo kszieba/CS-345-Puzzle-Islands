@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2860698149487361460, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal T-maze size (1)
+      value: Gold Five Val T-maze Size (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4382051675b00fd4bad906015962534b, type: 3}
@@ -5671,12 +5671,12 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 903630599}
-  - {fileID: 1761480201}
-  - {fileID: 1032781817}
-  - {fileID: 458497497}
-  - {fileID: 1818632995}
-  - {fileID: 1060983555}
   - {fileID: 928130520}
+  - {fileID: 1060983555}
+  - {fileID: 1818632995}
+  - {fileID: 458497497}
+  - {fileID: 1032781817}
+  - {fileID: 1761480201}
   m_Father: {fileID: 388968116}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5733,7 +5733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2860698149487361460, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal T-maze size
+      value: Gold Five Val T-maze Size
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4382051675b00fd4bad906015962534b, type: 3}
@@ -5794,15 +5794,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.39999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.39999998
       objectReference: {fileID: 0}
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.75
+      value: -5.7499995
       objectReference: {fileID: 0}
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.25
+      value: -2.2499998
       objectReference: {fileID: 0}
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5838,7 +5846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2860698149487361460, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal T-maze size (3)
+      value: Gold Five Val T-maze Size (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4382051675b00fd4bad906015962534b, type: 3}
@@ -5970,7 +5978,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6014,7 +6022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2860698149487361460, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal T-maze size (5)
+      value: Gold Five Val T-maze Size (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4382051675b00fd4bad906015962534b, type: 3}
@@ -8571,7 +8579,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8615,7 +8623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2860698149487361460, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal T-maze size (4)
+      value: Gold Five Val T-maze Size (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4382051675b00fd4bad906015962534b, type: 3}
@@ -9153,7 +9161,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9197,7 +9205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2860698149487361460, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal T-maze size (6)
+      value: Gold Five Val T-maze Size (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4382051675b00fd4bad906015962534b, type: 3}
@@ -9215,7 +9223,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 822437788916023366, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9259,7 +9267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2860698149487361460, guid: 4382051675b00fd4bad906015962534b, type: 3}
       propertyPath: m_Name
-      value: GoldFiveVal T-maze size (2)
+      value: Gold Five Val T-maze Size (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4382051675b00fd4bad906015962534b, type: 3}
