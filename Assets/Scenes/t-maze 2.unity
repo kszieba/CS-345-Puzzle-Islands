@@ -5863,7 +5863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4964508493723181872, guid: 030b3cd1407dd6e4496bf570af7fad7e, type: 3}
       propertyPath: m_Name
-      value: Player mk4
+      value: Mid-game Player
       objectReference: {fileID: 0}
     - target: {fileID: 4964508493723181872, guid: 030b3cd1407dd6e4496bf570af7fad7e, type: 3}
       propertyPath: m_IsActive
