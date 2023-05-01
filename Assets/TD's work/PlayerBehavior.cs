@@ -21,6 +21,7 @@ public class PlayerBehavior: MonoBehaviour
 	
 	public int level;
     private int high;
+	private string scene_name;
 
     private string[] destinationArray = {"t-maze", "t-maze 2", "maze_demi", "maze_demi2", 
 	"k-maze", "k-maze2"};
@@ -44,7 +45,18 @@ public class PlayerBehavior: MonoBehaviour
 		ScoreText.text = "Score: " + score.ToString();
         HighScoreText.text = "High Score: " + high.ToString();
 
-        Debug.Log("I live: " + UserName + level + score);
+		scene_name = SceneManager.GetActiveScene().name;
+		//sets level to correct integer if at start of game or testing single scene
+        if (destinationArray[level] != scene_name)
+		{
+			for (int i = 0; i < destinationArray.Length; i++)
+			{
+				if (destinationArray[i] == scene_name)
+				{
+					level = i;
+				}
+			}
+		}
 
     }
 
@@ -60,12 +72,14 @@ public class PlayerBehavior: MonoBehaviour
 	public void reachedDestination()
 	{
 		PlayerPrefs.SetInt(UserName + "Score", score);
-		level = level + 1;
-		PlayerPrefs.SetInt("Level", level);
-		if (SceneManager.GetActiveScene().name != "k-maze2") {
+		if (scene_name != destinationArray[destinationArray.Length - 1]) //checks if last scene
+		{
+			level = level + 1;
+			PlayerPrefs.SetInt("Level", level);
 			SceneManager.LoadScene(destinationArray[level]);
 		}
-		else {
+		else
+		{
 			credits1.SetActive(true);
 			player.SetActive(false);
 		}
@@ -113,7 +127,7 @@ public class PlayerBehavior: MonoBehaviour
     {
         Debug.Log("New Game!");
         UserName = null;
-        level = 0;
+        level = 0; //now unnecessary
         score = 0;
         high = 0;
         //is this a dumb work around, is there a better way for the game not to show the score from last game upon loading the first level
