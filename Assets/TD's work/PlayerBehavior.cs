@@ -28,12 +28,16 @@ public class PlayerBehavior: MonoBehaviour
     private int high;
     private string bestPlayer;
     private int bigTop;
-    
+    private string scene_name;
 
-    private string[] destinationArray = {"t-maze", "t-maze 2", "maze_demi", "maze_demi2", 
-	"k-maze", "k-maze2", "t-maze"};
+
+    private string[] destinationArray = {"t-maze", "t-maze 2", "maze_demi", "maze_demi2",
+	"k-maze", "k-maze2"};
 
     [SerializeField] private AudioSource goldCollectionSound;
+
+	public GameObject player;
+	public GameObject credits1;
 
     private void Awake()
     {
@@ -45,6 +49,7 @@ public class PlayerBehavior: MonoBehaviour
         level = PlayerPrefs.GetInt("Level", 0);
 		score = PlayerPrefs.GetInt(UserName + "Score", 0);
         high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
+        //Update UI text
         bestPlayer = PlayerPrefs.GetString("bestPlayer", "none");
         bigTop = PlayerPrefs.GetInt("BestScore", 0);
 
@@ -53,7 +58,18 @@ public class PlayerBehavior: MonoBehaviour
         HighScoreText.text = "High Score: " + high.ToString();
         TopScoreText.text = "Best: " + bestPlayer + ", " + bigTop.ToString();
 
-        //Debug.Log("I live: " + UserName + level + score);
+		scene_name = SceneManager.GetActiveScene().name;
+		//sets level to correct integer if at start of game or testing single scene
+        if (destinationArray[level] != scene_name)
+		{
+			for (int i = 0; i < destinationArray.Length; i++)
+			{
+				if (destinationArray[i] == scene_name)
+				{
+					level = i;
+				}
+			}
+		}
 
     }
 
@@ -65,14 +81,21 @@ public class PlayerBehavior: MonoBehaviour
         updateHighScore();
 
     }
-	
+
 	public void reachedDestination()
 	{
 		PlayerPrefs.SetInt(UserName + "Score", score);
-        level = level + 1;
-		PlayerPrefs.SetInt("Level", level);
-		Debug.Log(level);
-		SceneManager.LoadScene(destinationArray[level]);
+		if (scene_name != destinationArray[destinationArray.Length - 1]) //checks if last scene
+		{
+			level = level + 1;
+			PlayerPrefs.SetInt("Level", level);
+			SceneManager.LoadScene(destinationArray[level]);
+		}
+		else
+		{
+			credits1.SetActive(true);
+			player.SetActive(false);
+		}
 	}
 
     private void updateHighScore()
@@ -99,12 +122,12 @@ public class PlayerBehavior: MonoBehaviour
         if (other.gameObject.tag == "TestGold")
         {
             foundGold(100);
-            Destroy(other.gameObject); //get rid to gold so it can't be picked up twice
+            Destroy(other.gameObject); //get rid of gold so it can't be picked up twice
         }
         else if (other.gameObject.tag == "GFiveVal")
         {
             foundGold(5);
-            Destroy(other.gameObject); //get rid to gold so it can't be picked up twice
+            Destroy(other.gameObject); //get rid of gold so it can't be picked up twice
         }
 		else if (other.gameObject.tag == "Destination")
 		{
@@ -114,30 +137,30 @@ public class PlayerBehavior: MonoBehaviour
 
     public void ReadStringInput()
     {
-        //Debug.Log(UserName);
         UserName = input_field.text;
         PlayerPrefs.SetString("UserName", UserName);
-        //Paralyzed = false;
-        //Debug.Log(UserName);
-        //load high score, dose doing this on awaken make doing it here pointless?
-        high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
+        high = PlayerPrefs.GetInt(UserName + "HighScore", 0); //sets high score to match that for the chosen username
         HighScoreText.text = "High Score: " + high.ToString();
 
     }
 
     public void NewGame() //reset everything
     {
-        Debug.Log("New Game!");
         UserName = null;
-        level = 0;
+        level = 0; //now unnecessary
         score = 0;
         high = 0;
-        //is this a dum work around, is there a better way for the game not to show the score from last game upon loading the first level
+        //is this a dumb work around, is there a better way for the game not to show the score from last game upon loading the first level
         ScoreText.text = "Score: " + score.ToString();
         HighScoreText.text = "High Score: " + high.ToString();
     }
 
-    private void UpDateFacing()
+	public void RestartGame()
+	{
+		SceneManager.LoadScene(destinationArray[0]);
+	}
+
+    private void UpdateFacing()
     {
         //gives the animator the directions the player is currently moving in
         if (movement.x != 0 || movement.y != 0)
@@ -145,17 +168,17 @@ public class PlayerBehavior: MonoBehaviour
             animator.SetFloat("x", movement.x);
             animator.SetFloat("y", movement.y);
         }
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(UserName != null) //the player can not move until they have entered a username
+        if(UserName != null) //the player cannot move until they have entered a username
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            UpDateFacing(); //this is probably calling this method way to often since its only needed when moveing
+            UpdateFacing(); //this is probably calling this method way to often since it's only needed when moving
         }
     }
 
