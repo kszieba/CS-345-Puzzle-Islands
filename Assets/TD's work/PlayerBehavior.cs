@@ -29,7 +29,7 @@ public class PlayerBehavior: MonoBehaviour
     [SerializeField] private AudioSource goldCollectionSound;
 	
 	public GameObject player;
-	public GameObject credits1;
+	public GameObject credits; //this will be null in any scene except the last scene
 
     private void Awake()
     {
@@ -72,7 +72,7 @@ public class PlayerBehavior: MonoBehaviour
 	public void reachedDestination()
 	{
 		PlayerPrefs.SetInt(UserName + "Score", score);
-		if (scene_name != destinationArray[destinationArray.Length - 1]) //checks if last scene
+		if (scene_name != destinationArray[destinationArray.Length - 1]) //checks if not last scene
 		{
 			level = level + 1;
 			PlayerPrefs.SetInt("Level", level);
@@ -80,7 +80,7 @@ public class PlayerBehavior: MonoBehaviour
 		}
 		else
 		{
-			credits1.SetActive(true);
+			credits.SetActive(true);
 			player.SetActive(false);
 		}
 	}
@@ -134,6 +134,9 @@ public class PlayerBehavior: MonoBehaviour
         HighScoreText.text = "High Score: " + high.ToString();
     }
 	
+	/*
+	This method should be called by the button on the last page of the credits.
+	*/
 	public void RestartGame()
 	{
 		SceneManager.LoadScene(destinationArray[0]);
