@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehavior: MonoBehaviour
 {
-    private string UserName; //This is the user name used to call variables like score from player PlayerPrefs
-    [SerializeField] int score; //holds the current player score
+    //text feilds
     [SerializeField] TextMeshProUGUI ScoreText;
     [SerializeField] TextMeshProUGUI HighScoreText;
+    [SerializeField] TextMeshProUGUI TopScoreText;
 
     public float move_speed = 5f;
     public Rigidbody2D body;
@@ -20,9 +20,15 @@ public class PlayerBehavior: MonoBehaviour
     private Animator animator;
     //private bool Paralyzed = true; //player can't move if this is true
 	public GameObject data_object;
-	
-	public int level;
+
+    //scoreing variables
+    private string UserName; //This is the user name used to call variables like score from player PlayerPrefs
+    [SerializeField] int score; //holds the current player score
+    public int level;
     private int high;
+    private string bestPlayer;
+    private int bigTop;
+    
 
     private string[] destinationArray = {"t-maze", "t-maze 2", "maze_demi", "maze_demi2", 
 	"k-maze", "k-maze2", "t-maze"};
@@ -31,7 +37,7 @@ public class PlayerBehavior: MonoBehaviour
 
     private void Awake()
     {
-        
+
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
@@ -39,15 +45,15 @@ public class PlayerBehavior: MonoBehaviour
         level = PlayerPrefs.GetInt("Level", 0);
 		score = PlayerPrefs.GetInt(UserName + "Score", 0);
         high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
-        if (SceneManager.GetActiveScene().name == "t-maze")
-		{
-            Debug.Log("bro im in t-maze");
-		}
-        //Update UI text
-		ScoreText.text = "Score: " + score.ToString();
-        HighScoreText.text = "High Score: " + high.ToString();
+        bestPlayer = PlayerPrefs.GetString("bestPlayer", "none");
+        bigTop = PlayerPrefs.GetInt("BestScore", 0);
 
-        Debug.Log("I live: " + UserName + level + score);
+        //Update UI text
+        ScoreText.text = "Score: " + score.ToString();
+        HighScoreText.text = "High Score: " + high.ToString();
+        TopScoreText.text = "Best: " + bestPlayer + ", " + bigTop.ToString();
+
+        //Debug.Log("I live: " + UserName + level + score);
 
     }
 
@@ -63,7 +69,7 @@ public class PlayerBehavior: MonoBehaviour
 	public void reachedDestination()
 	{
 		PlayerPrefs.SetInt(UserName + "Score", score);
-		level = level + 1;
+        level = level + 1;
 		PlayerPrefs.SetInt("Level", level);
 		Debug.Log(level);
 		SceneManager.LoadScene(destinationArray[level]);
@@ -75,14 +81,21 @@ public class PlayerBehavior: MonoBehaviour
         if(score > PlayerPrefs.GetInt(UserName + "HighScore", 0))
         {
             PlayerPrefs.SetInt(UserName + "HighScore", score);
-            int high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
+            high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
             HighScoreText.text = "High Score: " + high.ToString();
+            if(high > bigTop)
+            {
+                PlayerPrefs.SetString("bestPlayer", UserName);
+                PlayerPrefs.SetInt("BestScore", high);
+                TopScoreText.text = "Best: " + UserName + ", " + high.ToString();
+                bestPlayer = UserName;
+                bigTop = high;
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("hit");
         if (other.gameObject.tag == "TestGold")
         {
             foundGold(100);
@@ -126,7 +139,8 @@ public class PlayerBehavior: MonoBehaviour
 
     private void UpDateFacing()
     {
-        if(movement.x != 0 || movement.y != 0)
+        //gives the animator the directions the player is currently moving in
+        if (movement.x != 0 || movement.y != 0)
         {
             animator.SetFloat("x", movement.x);
             animator.SetFloat("y", movement.y);
