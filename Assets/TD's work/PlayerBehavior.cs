@@ -125,7 +125,6 @@ public class PlayerBehavior: MonoBehaviour
 
     public void NewGame() //reset everything
     {
-        Debug.Log("New Game!");
         UserName = null;
         level = 0; //now unnecessary
         score = 0;
