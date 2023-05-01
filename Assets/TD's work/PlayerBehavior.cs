@@ -31,8 +31,8 @@ public class PlayerBehavior: MonoBehaviour
     private string scene_name;
 
 
-    private string[] destinationArray = {"t-maze", "t-maze 2", "maze_demi", "maze_demi2",
-	"k-maze", "k-maze2"};
+    private string[] destinationArray = {"1-1", "1-2", "2-1", "2-2",
+	"3-1", "3-2"};
 
     [SerializeField] private AudioSource goldCollectionSound;
 

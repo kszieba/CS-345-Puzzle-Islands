@@ -6489,6 +6489,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6541645609417769341, guid: 030b3cd1407dd6e4496bf570af7fad7e, type: 3}
+      propertyPath: credits
+      value: 
+      objectReference: {fileID: 6637320410426184155}
+    - target: {fileID: 6541645609417769341, guid: 030b3cd1407dd6e4496bf570af7fad7e, type: 3}
       propertyPath: credits1
       value: 
       objectReference: {fileID: 6637320410426184155}
