@@ -139,7 +139,7 @@ public class PlayerBehavior: MonoBehaviour
 		SceneManager.LoadScene(destinationArray[0]);
 	}
 
-    private void UpDateFacing()
+    private void UpdateFacing()
     {
         if(movement.x != 0 || movement.y != 0)
         {
@@ -156,7 +156,7 @@ public class PlayerBehavior: MonoBehaviour
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            UpDateFacing(); //this is probably calling this method way to often since it's only needed when moving
+            UpdateFacing(); //this is probably calling this method way to often since it's only needed when moving
         }
     }
 
