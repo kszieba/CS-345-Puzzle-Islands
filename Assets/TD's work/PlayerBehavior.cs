@@ -25,9 +25,12 @@ public class PlayerBehavior: MonoBehaviour
     private int high;
 
     private string[] destinationArray = {"t-maze", "t-maze 2", "maze_demi", "maze_demi2", 
-	"k-maze", "k-maze2", "t-maze"};
+	"k-maze", "k-maze2", "end"};
 
     [SerializeField] private AudioSource goldCollectionSound;
+	
+	public GameObject player;
+	public GameObject credits1;
 
     private void Awake()
     {
@@ -66,7 +69,13 @@ public class PlayerBehavior: MonoBehaviour
 		level = level + 1;
 		PlayerPrefs.SetInt("Level", level);
 		Debug.Log(level);
-		SceneManager.LoadScene(destinationArray[level]);
+		if (SceneManager.GetActiveScene().name != "k-maze2") {
+			SceneManager.LoadScene(destinationArray[level]);
+		}
+		else {
+			credits1.SetActive(true);
+			player.SetActive(false);
+		}
 	}
 
     private void updateHighScore()
@@ -123,6 +132,11 @@ public class PlayerBehavior: MonoBehaviour
         ScoreText.text = "Score: " + score.ToString();
         HighScoreText.text = "High Score: " + high.ToString();
     }
+	
+	public void RestartGame()
+	{
+		SceneManager.LoadScene(destinationArray[0]);
+	}
 
     private void UpDateFacing()
     {
@@ -141,7 +155,7 @@ public class PlayerBehavior: MonoBehaviour
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            UpDateFacing(); //this is probably calling this method way to often since its only needed when moveing
+            UpDateFacing(); //this is probably calling this method way to often since its only needed when moving
         }
     }
 
