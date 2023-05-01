@@ -4,13 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class oldLeaderBord : MonoBehaviour
+public class oldLeaderBoard : MonoBehaviour
 {
 
     /*
-    private int[] leaderBord = new int[5];
+    private int[] leaderBoard = new int[5];
 
-    private void updateLeaderBord()
+    private void updateLeaderBoard()
     {
         int i = 0; //index for the leaderboard
         bool placed = false; //remains false until the player is placed on the leaderboard
@@ -33,22 +33,22 @@ public class oldLeaderBord : MonoBehaviour
                     placed = true;
                 }
             }
-            leaderBord[i] = PlayerPrefs.GetInt((PlayerPrefs.GetString(i.ToString() + " Name", null)) + "HighScore", 0);
+            leaderBoard[i] = PlayerPrefs.GetInt((PlayerPrefs.GetString(i.ToString() + " Name", null)) + "HighScore", 0);
             i++;
         }
         for (int x = 0; x < 5; x++)
         {
-            Debug.Log(x.ToString() + " : " + leaderBord[x].ToString());
+            Debug.Log(x.ToString() + " : " + leaderBoard[x].ToString());
         }
 
     }
 
-    private void restLeaderBord() //removes all names from the leaderBord
+    private void restLeaderBoard() //removes all names from the leaderBoard
     {
         for (int i = 0; i < 5; i++)
         {
             PlayerPrefs.SetString(i.ToString() + " Name", null);
-            leaderBord[i] = 0;
+            leaderBoard[i] = 0;
         }
 
     }
