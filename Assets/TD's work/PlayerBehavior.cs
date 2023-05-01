@@ -18,14 +18,12 @@ public class PlayerBehavior: MonoBehaviour
     public TMP_InputField input_field;
 
     private Animator animator;
-    //private bool Paralyzed = true; //player can't move if this is true
-	public GameObject data_object;
 	
 	public int level;
     private int high;
 
     private string[] destinationArray = {"t-maze", "t-maze 2", "maze_demi", "maze_demi2", 
-	"k-maze", "k-maze2", "end"};
+	"k-maze", "k-maze2"};
 
     [SerializeField] private AudioSource goldCollectionSound;
 	
@@ -42,10 +40,6 @@ public class PlayerBehavior: MonoBehaviour
         level = PlayerPrefs.GetInt("Level", 0);
 		score = PlayerPrefs.GetInt(UserName + "Score", 0);
         high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
-        if (SceneManager.GetActiveScene().name == "t-maze")
-		{
-            Debug.Log("bro im in t-maze");
-		}
         //Update UI text
 		ScoreText.text = "Score: " + score.ToString();
         HighScoreText.text = "High Score: " + high.ToString();
@@ -68,7 +62,6 @@ public class PlayerBehavior: MonoBehaviour
 		PlayerPrefs.SetInt(UserName + "Score", score);
 		level = level + 1;
 		PlayerPrefs.SetInt("Level", level);
-		Debug.Log(level);
 		if (SceneManager.GetActiveScene().name != "k-maze2") {
 			SceneManager.LoadScene(destinationArray[level]);
 		}
@@ -91,16 +84,15 @@ public class PlayerBehavior: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("hit");
         if (other.gameObject.tag == "TestGold")
         {
             foundGold(100);
-            Destroy(other.gameObject); //get rid to gold so it can't be picked up twice
+            Destroy(other.gameObject); //get rid of gold so it can't be picked up twice
         }
         else if (other.gameObject.tag == "GFiveVal")
         {
             foundGold(5);
-            Destroy(other.gameObject); //get rid to gold so it can't be picked up twice
+            Destroy(other.gameObject); //get rid of gold so it can't be picked up twice
         }
 		else if (other.gameObject.tag == "Destination")
 		{
@@ -110,13 +102,9 @@ public class PlayerBehavior: MonoBehaviour
 
     public void ReadStringInput()
     {
-        //Debug.Log(UserName);
         UserName = input_field.text;
         PlayerPrefs.SetString("UserName", UserName);
-        //Paralyzed = false;
-        //Debug.Log(UserName);
-        //load high score, dose doing this on awaken make doing it here pointless?
-        high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
+        high = PlayerPrefs.GetInt(UserName + "HighScore", 0); //sets high score to match that for the chosen username
         HighScoreText.text = "High Score: " + high.ToString();
 
     }
@@ -128,7 +116,7 @@ public class PlayerBehavior: MonoBehaviour
         level = 0;
         score = 0;
         high = 0;
-        //is this a dum work around, is there a better way for the game not to show the score from last game upon loading the first level
+        //is this a dumb work around, is there a better way for the game not to show the score from last game upon loading the first level
         ScoreText.text = "Score: " + score.ToString();
         HighScoreText.text = "High Score: " + high.ToString();
     }
@@ -151,11 +139,11 @@ public class PlayerBehavior: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(UserName != null) //the player can not move until they have entered a username
+        if(UserName != null) //the player cannot move until they have entered a username
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            UpDateFacing(); //this is probably calling this method way to often since its only needed when moving
+            UpDateFacing(); //this is probably calling this method way to often since it's only needed when moving
         }
     }
 
