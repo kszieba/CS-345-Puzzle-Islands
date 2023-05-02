@@ -41,6 +41,7 @@ Welcome to our unity project, Puzzle Islands. This is a 2D puzzle focused explor
 - TextMesh Pro - built in with unity.
 - Tilemaps - contains all the tile maps that we used to build our mazes.
 - UIScrolls - Has all the credits, intro scroll and the original score assets.
+- PlayerBehavior.cs - Script used to control player behavior, world intercation and updates the players UI.
 
 
 
