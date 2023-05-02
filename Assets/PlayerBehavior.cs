@@ -26,10 +26,10 @@ public class PlayerBehavior: MonoBehaviour
     private int high;
     private string bestPlayer;
     private int bigTop;
-    private string scene_name;
+    private string sceneName;
 
 
-    private string[] destinationArray = {"1-1", "1-2", "2-1", "2-2",
+    private string[] sceneArray = {"1-1", "1-2", "2-1", "2-2",
 	"3-1", "3-2"};
     
     //audio sources for sound effects
@@ -58,13 +58,13 @@ public class PlayerBehavior: MonoBehaviour
         HighScoreText.text = "High Score: " + high.ToString();
         TopScoreText.text = "Best: " + bestPlayer + ", " + bigTop.ToString();
 
-		scene_name = SceneManager.GetActiveScene().name;
+		sceneName = SceneManager.GetActiveScene().name;
 		//sets level to correct integer if at start of game or testing single scene
-        if (destinationArray[level] != scene_name)
+        if (sceneArray[level] != sceneName)
 		{
-			for (int i = 0; i < destinationArray.Length; i++)
+			for (int i = 0; i < sceneArray.Length; i++)
 			{
-				if (destinationArray[i] == scene_name)
+				if (sceneArray[i] == sceneName)
 				{
 					level = i;
 				}
@@ -73,7 +73,7 @@ public class PlayerBehavior: MonoBehaviour
 
     }
 
-    public void foundGold(int value)
+    public void FoundGold(int value)
     {
         goldCollectionSound.Play();
         score = score + value;//add the value of the gold found to score
@@ -82,15 +82,15 @@ public class PlayerBehavior: MonoBehaviour
 
     }
 
-	public void reachedDestination()
+	public void ReachedDestination()
 	{
         LevelWinSound.Play();
         PlayerPrefs.SetInt(userName + "Score", score);
-		if (scene_name != destinationArray[destinationArray.Length - 1]) //checks if not last scene
+		if (sceneName != sceneArray[sceneArray.Length - 1]) //checks if not last scene
 		{
 			level = level + 1;
 			PlayerPrefs.SetInt("Level", level);
-			SceneManager.LoadScene(destinationArray[level]);
+			SceneManager.LoadScene(sceneArray[level]);
 		}
 		else
 		{
@@ -122,12 +122,12 @@ public class PlayerBehavior: MonoBehaviour
     {
         if (other.gameObject.tag == "GFiveVal")
         {
-            foundGold(5);
+            FoundGold(5);
             Destroy(other.gameObject); //get rid of gold so it can't be picked up twice
         }
 		else if (other.gameObject.tag == "Destination")
 		{
-			reachedDestination();
+			ReachedDestination();
 		}
     }
 
@@ -155,7 +155,7 @@ public class PlayerBehavior: MonoBehaviour
 	*/
 	public void RestartGame()
 	{
-		SceneManager.LoadScene(destinationArray[0]);
+		SceneManager.LoadScene(sceneArray[0]);
 	}
 
     private void UpdateFacing()
