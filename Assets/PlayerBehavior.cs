@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehavior: MonoBehaviour
 {
-    //text feilds
+    //text fields for score scroll
     [SerializeField] TextMeshProUGUI ScoreText;
     [SerializeField] TextMeshProUGUI HighScoreText;
     [SerializeField] TextMeshProUGUI TopScoreText;
@@ -159,7 +159,7 @@ public class PlayerBehavior: MonoBehaviour
     }
 
 	/*
-	This method should be called by the button on the last page of the credits.
+	This method should be called by the button on the last page of the credits. It loads the first scene.
 	*/
 	public void RestartGame()
 	{
