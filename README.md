@@ -30,20 +30,20 @@ Welcome to our Unity project, Puzzle Islands. This is a 2D puzzle-focused explor
     - If build option not working hit switch platform, wait for load then hit build.
 
 
-## Assets Folder Description:
+## Assets folder description:
 
-- Audio - folder contains sounds for the game.
-    - Gold Pick up - contains sounds for collisions with gold coins.
-    - Background music - contains sounds for background music of all the levels of the game.
 - Animations - contains gold coin and player animations.
-- Collectibles - contains gold coin prefab and destination prefab.
+- Audio - folder contains sounds for the game.
+	- 8Bit Music Album - 051321 - contains sounds for background music of all the levels of the game.
+    - CasualGameSounds - contains sounds for collisions with gold coins and crates.
+- Collectibles - contains gold coin prefab and destination prefabs, as well as gold coin asset.
 - Scenes - All the different scenes/levels of our game.
-- TextMesh Pro - built in with unity.
-- Tilemaps - contains all the tile maps that we used to build our mazes.
-- UIScrolls - Has all the credits, intro scroll and the original score assets.
-- PlayerBehavior.cs - Script used to control player behavior, world intercation and updates the players UI.
-- Mid-game Player.prefab - Version of the player used after the first level and contains the score and camera attached to it.
+- TextMesh Pro - built in with Unity.
+- Tilemaps - contains all the tilemaps that we used to build our mazes.
+- UI Scrolls - Has all the credits, the intro scroll and the original score assets.
+- Mid-game Player.prefab - Version of the player used after the first level with the score and camera attached to it.
 - New Game Player.prefab - Same as Mid Game Player except it prompts player to give username.
+- PlayerBehavior.cs - Script used to control player behavior and world interaction which also updates the player's UI.
 
 ## Links to tutorials used:
 

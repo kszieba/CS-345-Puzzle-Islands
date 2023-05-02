@@ -7,15 +7,15 @@ using UnityEngine.SceneManagement;
 public class PlayerBehavior: MonoBehaviour
 {
     //text fields for score scroll
-    [SerializeField] TextMeshProUGUI ScoreText;
-    [SerializeField] TextMeshProUGUI HighScoreText;
-    [SerializeField] TextMeshProUGUI TopScoreText;
+    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI highScoreText;
+    [SerializeField] TextMeshProUGUI topScoreText;
 
-    public float move_speed = 5f; //public keyword allows speed to be easily edited
+    public float moveSpeed = 5f; //public keyword allows speed to be easily edited
     public Rigidbody2D body;
     private Vector2 movement; //can store an x and y
 
-    public TMP_InputField input_field;
+    public TMP_InputField inputField;
 
     private Animator animator;
 
@@ -34,7 +34,7 @@ public class PlayerBehavior: MonoBehaviour
     
     //audio sources for sound effects
     [SerializeField] private AudioSource goldCollectionSound;
-    [SerializeField] private AudioSource LevelWinSound;
+    [SerializeField] private AudioSource levelWinSound;
 
     public GameObject player;
 	public GameObject credits; //this will be null in any scene except the last scene
@@ -54,9 +54,9 @@ public class PlayerBehavior: MonoBehaviour
         bigTop = PlayerPrefs.GetInt("BestScore", 0);
 
         //Update UI text
-        ScoreText.text = "Score: " + score.ToString();
-        HighScoreText.text = "High Score: " + high.ToString();
-        TopScoreText.text = "Best: " + bestPlayer + ", " + bigTop.ToString();
+        scoreText.text = "Score: " + score.ToString();
+        highScoreText.text = "High Score: " + high.ToString();
+        topScoreText.text = "Best: " + bestPlayer + ", " + bigTop.ToString();
 
 		sceneName = SceneManager.GetActiveScene().name;
 		//sets level to correct integer if at start of game or testing single scene
@@ -77,14 +77,14 @@ public class PlayerBehavior: MonoBehaviour
     {
         goldCollectionSound.Play();
         score = score + value;//add the value of the gold found to score
-        ScoreText.text = "Score: " + score.ToString();
+        scoreText.text = "Score: " + score.ToString();
         updateHighScore();
 
     }
 
 	private void ReachedDestination()
 	{
-        LevelWinSound.Play();
+        levelWinSound.Play();
         PlayerPrefs.SetInt(userName + "Score", score);
 		if (sceneName != sceneArray[sceneArray.Length - 1]) //checks if not last scene
 		{
@@ -106,12 +106,12 @@ public class PlayerBehavior: MonoBehaviour
         {
             PlayerPrefs.SetInt(userName + "HighScore", score);
             high = PlayerPrefs.GetInt(userName + "HighScore", 0);
-            HighScoreText.text = "High Score: " + high.ToString();
+            highScoreText.text = "High Score: " + high.ToString();
             if(high > bigTop)
             {
                 PlayerPrefs.SetString("bestPlayer", userName);
                 PlayerPrefs.SetInt("BestScore", high);
-                TopScoreText.text = "Best: " + userName + ", " + high.ToString();
+                topScoreText.text = "Best: " + userName + ", " + high.ToString();
                 bestPlayer = userName;
                 bigTop = high;
             }
@@ -133,10 +133,10 @@ public class PlayerBehavior: MonoBehaviour
 
     public void ReadStringInput()
     {
-        userName = input_field.text;
+        userName = inputField.text;
         PlayerPrefs.SetString("userName", userName);
         high = PlayerPrefs.GetInt(userName + "HighScore", 0); //sets high score to match that for the chosen username
-        HighScoreText.text = "High Score: " + high.ToString();
+        highScoreText.text = "High Score: " + high.ToString();
 
     }
 
@@ -148,8 +148,8 @@ public class PlayerBehavior: MonoBehaviour
         userName = null;
         score = 0;
         high = 0;
-        ScoreText.text = "Score: " + score.ToString();
-        HighScoreText.text = "High Score: " + high.ToString();
+        scoreText.text = "Score: " + score.ToString();
+        highScoreText.text = "High Score: " + high.ToString();
     }
 
 	/*
@@ -185,6 +185,6 @@ public class PlayerBehavior: MonoBehaviour
     //called on a fixed interval
     void FixedUpdate()
     {
-        body.MovePosition(body.position + movement * move_speed * Time.fixedDeltaTime);
+        body.MovePosition(body.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
