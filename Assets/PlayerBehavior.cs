@@ -161,11 +161,8 @@ public class PlayerBehavior: MonoBehaviour
     private void UpdateFacing()
     {
         //gives the animator the directions the player is currently moving in
-        if (movement.x != 0 || movement.y != 0)
-        {
-            animator.SetFloat("x", movement.x);
-            animator.SetFloat("y", movement.y);
-        }
+        animator.SetFloat("x", movement.x);
+        animator.SetFloat("y", movement.y);
 
     }
 
@@ -176,7 +173,10 @@ public class PlayerBehavior: MonoBehaviour
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            UpdateFacing(); //this is probably calling this method way to often since it's only needed when moving
+			if (movement.x != 0 || movement.y != 0)
+			{
+				UpdateFacing();
+			}
         }
     }
 
