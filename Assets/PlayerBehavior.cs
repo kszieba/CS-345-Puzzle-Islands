@@ -150,6 +150,8 @@ public class PlayerBehavior: MonoBehaviour
     {
         userName = inputField.text;
         PlayerPrefs.SetString("userName", userName);
+		score = 0;
+		scoreText.text = "Score: " + score.ToString();
         high = PlayerPrefs.GetInt(userName + "HighScore", 0); //sets high score to match that for the chosen user name
         highScoreText.text = "High Score: " + high.ToString();
 
