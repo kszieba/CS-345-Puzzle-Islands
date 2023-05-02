@@ -972,18 +972,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b54af39f46c9d194c8f1cfa16c032438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 2034540348860453281}
-  HighScoreText: {fileID: 835792877155765765}
-  TopScoreText: {fileID: 7077318110888992751}
-  move_speed: 5
+  scoreText: {fileID: 2034540348860453281}
+  highScoreText: {fileID: 835792877155765765}
+  topScoreText: {fileID: 7077318110888992751}
+  moveSpeed: 5
   body: {fileID: 1420920675889549223}
-  input_field: {fileID: 2034540348514147963}
-  data_object: {fileID: 0}
+  inputField: {fileID: 2034540348514147963}
   score: 0
   level: 0
   goldCollectionSound: {fileID: 5123529375548632514}
-  LevelWinSound: {fileID: 7372747507562604630}
-  player: {fileID: 0}
+  levelWinSound: {fileID: 7372747507562604630}
+  player: {fileID: 7278906456524112325}
   credits: {fileID: 0}
 --- !u!70 &3911922425742663911
 CapsuleCollider2D:

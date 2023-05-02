@@ -721,17 +721,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b54af39f46c9d194c8f1cfa16c032438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 4457023617651946324}
-  HighScoreText: {fileID: 3062432107931806960}
-  TopScoreText: {fileID: 3641625913941222009}
-  move_speed: 5
+  scoreText: {fileID: 4457023617651946324}
+  highScoreText: {fileID: 3062432107931806960}
+  topScoreText: {fileID: 3641625913941222009}
+  moveSpeed: 5
   body: {fileID: 3629544116604038482}
-  input_field: {fileID: 0}
-  data_object: {fileID: 0}
+  inputField: {fileID: 0}
   score: 0
   level: 0
   goldCollectionSound: {fileID: 6251237271593346966}
-  LevelWinSound: {fileID: 5021889466807689871}
+  levelWinSound: {fileID: 5021889466807689871}
   player: {fileID: 4964508493723181872}
   credits: {fileID: 0}
 --- !u!70 &1706675482443629074
