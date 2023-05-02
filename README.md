@@ -21,15 +21,16 @@ Welcome to our unity project, Puzzle Islands. This is a 2D puzzle focused explor
 - Load folder using unity hub (version must be 2021.3.21f1!)
 - Go to the 1-1 file in the Assets/Scenes folder and press play with unity ui.
 
-### Building the game
+### Building the game:
 
 - Go to file
 - Go to build settings
 - Select webgl on left side of screen
-- hit build
+- hit build 
+    - if build option not working hit swith platform, wait for load then hit build.
 
 
-## Assets Folder Description
+## Assets Folder Description:
 
 - Audio - folder contains sounds for the game.
     - Gold Pick up - contains sounds for collisions with gold coins.
