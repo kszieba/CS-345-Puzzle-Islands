@@ -120,12 +120,7 @@ public class PlayerBehavior: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "TestGold")
-        {
-            foundGold(100);
-            Destroy(other.gameObject); //get rid of gold so it can't be picked up twice
-        }
-        else if (other.gameObject.tag == "GFiveVal")
+        if (other.gameObject.tag == "GFiveVal")
         {
             foundGold(5);
             Destroy(other.gameObject); //get rid of gold so it can't be picked up twice
