@@ -68,12 +68,13 @@ public class PlayerBehavior: MonoBehaviour
 				{
 					level = i;
 				}
+				break;
 			}
 		}
 
     }
 
-    public void FoundGold(int value)
+    private void FoundGold(int value)
     {
         goldCollectionSound.Play();
         score = score + value;//add the value of the gold found to score
@@ -82,7 +83,7 @@ public class PlayerBehavior: MonoBehaviour
 
     }
 
-	public void ReachedDestination()
+	private void ReachedDestination()
 	{
         LevelWinSound.Play();
         PlayerPrefs.SetInt(userName + "Score", score);
@@ -140,12 +141,14 @@ public class PlayerBehavior: MonoBehaviour
 
     }
 
+	/*
+	This method is called from outside this script to start a new game.
+	*/
     public void NewGame() //reset everything
     {
         userName = null;
         score = 0;
         high = 0;
-        //is this a dumb work around, is there a better way for the game not to show the score from last game upon loading the first level
         ScoreText.text = "Score: " + score.ToString();
         HighScoreText.text = "High Score: " + high.ToString();
     }
