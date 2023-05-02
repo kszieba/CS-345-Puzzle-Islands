@@ -135,7 +135,7 @@ public class PlayerBehavior: MonoBehaviour
     {
         userName = inputField.text;
         PlayerPrefs.SetString("userName", userName);
-        high = PlayerPrefs.GetInt(userName + "HighScore", 0); //sets high score to match that for the chosen username
+        high = PlayerPrefs.GetInt(userName + "HighScore", 0); //sets high score to match that for the chosen user name
         highScoreText.text = "High Score: " + high.ToString();
 
     }
@@ -171,7 +171,7 @@ public class PlayerBehavior: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(userName != null) //the player cannot move until they have entered a username
+        if(userName != null) //the player cannot move until they have entered a user name
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
