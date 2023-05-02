@@ -42,6 +42,8 @@ Welcome to our unity project, Puzzle Islands. This is a 2D puzzle focused explor
 - Tilemaps - contains all the tile maps that we used to build our mazes.
 - UIScrolls - Has all the credits, intro scroll and the original score assets.
 - PlayerBehavior.cs - Script used to control player behavior, world intercation and updates the players UI.
+- Mid-game Player.prefab - Version of the player used after the first level and contains the score and camera attached to it.
+- New Game Player.prefab - Same as Mid Game Player except it prompts player to give username.
 
 
 
