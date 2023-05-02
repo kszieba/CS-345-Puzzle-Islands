@@ -28,7 +28,7 @@ public class PlayerBehavior: MonoBehaviour
     private int bigTop;
     private string sceneName;
 
-
+	//array of scenes, which should contain all scenes in order
     private string[] sceneArray = {"1-1", "1-2", "2-1", "2-2",
 	"3-1", "3-2"};
     
@@ -72,7 +72,10 @@ public class PlayerBehavior: MonoBehaviour
 		}
 
     }
-
+	
+	/*
+	This method is called when gold is added to the player's score.
+	*/
     private void FoundGold(int value)
     {
         goldCollectionSound.Play();
@@ -82,6 +85,9 @@ public class PlayerBehavior: MonoBehaviour
 
     }
 
+	/*
+	This method is called when the player finds the crate at the end of a scene.
+	*/
 	private void ReachedDestination()
 	{
         levelWinSound.Play();
@@ -99,6 +105,9 @@ public class PlayerBehavior: MonoBehaviour
 		}
 	}
 
+	/*
+	This method updates the high score if necessary.
+	*/
     private void updateHighScore()
     {
         //the high score will not carry across computers
@@ -118,6 +127,9 @@ public class PlayerBehavior: MonoBehaviour
         }
     }
 
+	/*
+	This method is called when the player collides with an object.
+	*/
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "GFiveVal")
@@ -131,6 +143,9 @@ public class PlayerBehavior: MonoBehaviour
 		}
     }
 
+	/*
+	This method reads the username from the input field. It is called from the input field.
+	*/
     public void ReadStringInput()
     {
         userName = inputField.text;
@@ -160,6 +175,9 @@ public class PlayerBehavior: MonoBehaviour
 		SceneManager.LoadScene(sceneArray[0]);
 	}
 
+	/*
+	This method is called when necessary to update the direction the player is facing.
+	*/
     private void UpdateFacing()
     {
         //gives the animator the directions the player is currently moving in
