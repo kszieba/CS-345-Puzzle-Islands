@@ -33,10 +33,12 @@ public class PlayerBehavior: MonoBehaviour
 
     private string[] destinationArray = {"1-1", "1-2", "2-1", "2-2",
 	"3-1", "3-2"};
-
+    
+    //audio sources for sound effects
     [SerializeField] private AudioSource goldCollectionSound;
+    [SerializeField] private AudioSource LevelWinSound;
 
-	public GameObject player;
+    public GameObject player;
 	public GameObject credits; //this will be null in any scene except the last scene
 
     private void Awake()
@@ -84,7 +86,8 @@ public class PlayerBehavior: MonoBehaviour
 
 	public void reachedDestination()
 	{
-		PlayerPrefs.SetInt(UserName + "Score", score);
+        LevelWinSound.Play();
+        PlayerPrefs.SetInt(UserName + "Score", score);
 		if (scene_name != destinationArray[destinationArray.Length - 1]) //checks if not last scene
 		{
 			level = level + 1;
