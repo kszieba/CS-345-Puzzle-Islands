@@ -18,10 +18,8 @@ public class PlayerBehavior: MonoBehaviour
     public TMP_InputField input_field;
 
     private Animator animator;
-    //private bool Paralyzed = true; //player can't move if this is true
-	public GameObject data_object;
 
-    //scoreing variables
+    //scoring variables
     private string UserName; //This is the user name used to call variables like score from player PlayerPrefs
     [SerializeField] int score; //holds the current player score
     public int level;
