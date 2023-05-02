@@ -150,7 +150,6 @@ public class PlayerBehavior: MonoBehaviour
     public void NewGame() //reset everything
     {
         UserName = null;
-        level = 0; //now unnecessary
         score = 0;
         high = 0;
         //is this a dumb work around, is there a better way for the game not to show the score from last game upon loading the first level

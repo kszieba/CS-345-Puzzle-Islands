@@ -45,7 +45,11 @@ Welcome to our unity project, Puzzle Islands. This is a 2D puzzle focused explor
 - Mid-game Player.prefab - Version of the player used after the first level and contains the score and camera attached to it.
 - New Game Player.prefab - Same as Mid Game Player except it prompts player to give username.
 
+## Links to tutorials used:
 
+- [Coins animation](https://www.youtube.com/watch?v=DZ-3g31jk90)
+- [Audio added](https://www.youtube.com/watch?v=J77CMuAwVDY)
+- [Tilemap implementation](https://www.youtube.com/watch?v=DTp5zi8_u1U&t=77s)
 
 
 
