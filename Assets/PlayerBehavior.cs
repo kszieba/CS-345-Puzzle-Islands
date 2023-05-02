@@ -11,7 +11,7 @@ public class PlayerBehavior: MonoBehaviour
     [SerializeField] TextMeshProUGUI HighScoreText;
     [SerializeField] TextMeshProUGUI TopScoreText;
 
-    public float move_speed = 5f;
+    public float move_speed = 5f; //public keyword allows speed to be easily edited
     public Rigidbody2D body;
     private Vector2 movement; //can store an x and y
 
@@ -20,7 +20,7 @@ public class PlayerBehavior: MonoBehaviour
     private Animator animator;
 
     //scoring variables
-    private string UserName; //This is the user name used to call variables like score from player PlayerPrefs
+    private string userName; //This is the user name used to call variables like score from player PlayerPrefs
     [SerializeField] int score; //holds the current player score
     public int level;
     private int high;
@@ -45,10 +45,10 @@ public class PlayerBehavior: MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        UserName = PlayerPrefs.GetString("UserName", null);
+        userName = PlayerPrefs.GetString("userName", null);
         level = PlayerPrefs.GetInt("Level", 0);
-		score = PlayerPrefs.GetInt(UserName + "Score", 0);
-        high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
+		score = PlayerPrefs.GetInt(userName + "Score", 0);
+        high = PlayerPrefs.GetInt(userName + "HighScore", 0);
         //Update UI text
         bestPlayer = PlayerPrefs.GetString("bestPlayer", "none");
         bigTop = PlayerPrefs.GetInt("BestScore", 0);
@@ -85,7 +85,7 @@ public class PlayerBehavior: MonoBehaviour
 	public void reachedDestination()
 	{
         LevelWinSound.Play();
-        PlayerPrefs.SetInt(UserName + "Score", score);
+        PlayerPrefs.SetInt(userName + "Score", score);
 		if (scene_name != destinationArray[destinationArray.Length - 1]) //checks if not last scene
 		{
 			level = level + 1;
@@ -102,17 +102,17 @@ public class PlayerBehavior: MonoBehaviour
     private void updateHighScore()
     {
         //the high score will not carry across computers
-        if(score > PlayerPrefs.GetInt(UserName + "HighScore", 0))
+        if(score > PlayerPrefs.GetInt(userName + "HighScore", 0))
         {
-            PlayerPrefs.SetInt(UserName + "HighScore", score);
-            high = PlayerPrefs.GetInt(UserName + "HighScore", 0);
+            PlayerPrefs.SetInt(userName + "HighScore", score);
+            high = PlayerPrefs.GetInt(userName + "HighScore", 0);
             HighScoreText.text = "High Score: " + high.ToString();
             if(high > bigTop)
             {
-                PlayerPrefs.SetString("bestPlayer", UserName);
+                PlayerPrefs.SetString("bestPlayer", userName);
                 PlayerPrefs.SetInt("BestScore", high);
-                TopScoreText.text = "Best: " + UserName + ", " + high.ToString();
-                bestPlayer = UserName;
+                TopScoreText.text = "Best: " + userName + ", " + high.ToString();
+                bestPlayer = userName;
                 bigTop = high;
             }
         }
@@ -138,16 +138,16 @@ public class PlayerBehavior: MonoBehaviour
 
     public void ReadStringInput()
     {
-        UserName = input_field.text;
-        PlayerPrefs.SetString("UserName", UserName);
-        high = PlayerPrefs.GetInt(UserName + "HighScore", 0); //sets high score to match that for the chosen username
+        userName = input_field.text;
+        PlayerPrefs.SetString("userName", userName);
+        high = PlayerPrefs.GetInt(userName + "HighScore", 0); //sets high score to match that for the chosen username
         HighScoreText.text = "High Score: " + high.ToString();
 
     }
 
     public void NewGame() //reset everything
     {
-        UserName = null;
+        userName = null;
         score = 0;
         high = 0;
         //is this a dumb work around, is there a better way for the game not to show the score from last game upon loading the first level
@@ -177,7 +177,7 @@ public class PlayerBehavior: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(UserName != null) //the player cannot move until they have entered a username
+        if(userName != null) //the player cannot move until they have entered a username
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
